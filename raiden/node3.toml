@@ -1,0 +1,29 @@
+# File paths
+keystore-path = '/opt/raiden/config/keys'
+datadir = '/opt/raiden/data'
+password-file = '/opt/raiden/config/passwd'
+
+# Networking
+eth-rpc-endpoint = "http://localhost:8545"
+network-id = 4321
+
+environment-type = "development"
+accept-disclaimer = true
+api-address = "0.0.0.0:5003"
+matrix-server = "http://localhost:9080"
+
+default-reveal-timeout = 20
+default-settle-timeout = 40
+
+routing-mode = "pfs"
+pathfinding-service-address = "http://localhost:5555"
+# Misc
+address = "0x03Bc817563c67843fa9C7871e7A0CaC1E5Fac0ed"
+blockchain-query-interval = 1.0
+
+log-json = true
+log-file = "/var/log/supervisor/node3.log.json"
+
+# Log settings
+[log-config]
+"raiden" = "DEBUG"

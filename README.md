@@ -49,6 +49,21 @@ docker run --detach --rm \
   raidennetwork/lightclient-e2e-environment
 ```
 
+if you want starup 3 or more node, write supervisord.conf. then run:
+
+```sh
+docker run --detach --rm \
+  --name lc-e2e \
+  --publish 127.0.0.1:9080:9080 \
+  --publish 127.0.0.1:5555:5555 \
+  --publish 127.0.0.1:5001:5001 \
+  --publish 127.0.0.1:5002:5002 \
+  --publish 127.0.0.1:5003:5003 \
+  --publish 127.0.0.1:8545:8545 \
+  raidennetwork/lightclient-e2e-environment
+```
+
+
 ## Access Services
 
 After the Docker container gets started, the services are accessible at the
