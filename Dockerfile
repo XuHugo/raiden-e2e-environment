@@ -13,7 +13,7 @@ FROM xq310/raiden-base as raiden-builder
 ARG RAIDEN_VERSION
 
 # clone raiden repo + install dependencies
-RUN git clone -b develop https://github.com/raiden-network/raiden /app/raiden
+RUN git clone -b develop https://github.com/XuHugo/raiden /app/raiden
 RUN python3 -m venv /opt/raiden
 ENV PATH="/opt/raiden/bin:$PATH"
 
