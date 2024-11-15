@@ -9,7 +9,7 @@ ARG GETH_VERSION="1.10.20"
 ARG GETH_URL_LINUX="https://gethstore.blob.core.windows.net/builds/geth-linux-amd64-1.10.20-8f2416a8.tar.gz"
 ARG GETH_MD5_LINUX="d1793b47659cb6b1bb753b6bae2792bb"
 
-FROM harired/ubuntu-python3.9 as raiden-builder
+FROM xq310/raiden-base as raiden-builder
 ARG RAIDEN_VERSION
 
 # clone raiden repo + install dependencies
@@ -27,7 +27,7 @@ RUN apt-get install -y pkg-config
 RUN apt-get install -y libavformat-dev libavcodec-dev libavdevice-dev libavutil-dev libswscale-dev libswresample-dev libavfilter-dev
 RUN make install
 
-FROM harired/ubuntu-python3.9 as synapse-builder
+FROM xq310/raiden-base as synapse-builder
 
 RUN python -m venv /synapse-venv && /synapse-venv/bin/pip install wheel
 
@@ -51,7 +51,7 @@ RUN sed -i 's/\(\s*\)if self.worker_type/\1if True or self.worker_type/' /synaps
 
 COPY synapse/auth/ /synapse-venv/lib/python3.9/site-packages/
 
-FROM harired/ubuntu-python3.9
+FROM xq310/raiden-base
 LABEL maintainer="Raiden Network Team <contact@raiden.network>"
 
 ARG OS_NAME
