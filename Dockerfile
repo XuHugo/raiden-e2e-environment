@@ -18,7 +18,7 @@ RUN python3 -m venv /opt/raiden
 ENV PATH="/opt/raiden/bin:$PATH"
 
 WORKDIR /app/raiden
-RUN git checkout PhDv3
+RUN git checkout op
 #RUN pip install raiden-contracts==0.40.0
 RUN pip install pip==21.2.4
 RUN apt-get update
